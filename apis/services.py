@@ -163,12 +163,13 @@ def get_user_info(ccid, username):
     result["custom_info"] = {}
 
     # Search For Balance
-    balance = soup.find('span', {'f_descr': 'opening_balance'})
 
-    if balance is None:
+    search = re.search("var balance_value = ([0-9.]+);", response.text)
+
+    if search is None:
         return None
 
-    result["custom_info"]['balance'] = balance.string.strip()
+    result["custom_info"]['balance'] = search.group(1)
 
     result['token_secure_key'] = token
 

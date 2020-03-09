@@ -84,7 +84,8 @@ def user_info(request):
 
     result = {
         'expiration_date': user_info['expiration_date'],
-        'balance': user_info['custom_info']['balance']
+        'balance': user_info['custom_info']['balance'],
+        'userid': user_info['tID'],
     }
 
     return JsonResponse(result)
