@@ -12,6 +12,7 @@ gunicorn==20.0.4
 idna==2.9
 pycparser==2.20
 pyOpenSSL==19.1.0
+python-dotenv==0.12.0
 pytz==2019.3
 requests==2.23.0
 six==1.14.0
