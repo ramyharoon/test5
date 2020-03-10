@@ -86,6 +86,8 @@ def user_info(request):
         'expiration_date': user_info['expiration_date'],
         'balance': user_info['custom_info']['balance'],
         'userid': user_info['tID'],
+        'type': user_info['srv_cli'],
+        'identity': '' if 'srv_centrex' not in user_info.keys() else user_info['srv_centrex'],
     }
 
     return JsonResponse(result)
